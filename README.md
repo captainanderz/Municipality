@@ -34,7 +34,7 @@ Application has no visible user interface, requests are given directly to applic
 (producer service). Also, there should be a consumer service created to demonstrate how the
 producer service can be used.
 Bonus tasks (if there is time left)
- Application is deployed as a self-hosted windows service
- Update record functionality is exposed via API
+- Application is deployed as a self-hosted windows service
+- Update record functionality is exposed via API
 
 Please send us a github repository link once you are finished.
