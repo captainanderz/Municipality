@@ -1,5 +1,7 @@
 # DanskeBankMunicipality
-The CSV file used with Postman [link](https://github.com/captainanderz/DanskeBankMunicipality/blob/master/DanskeBankMunicipality/Municipalities.csv)
+
+- Postman collection file: [link](https://github.com/captainanderz/DanskeBankMunicipality/blob/master/Municipality.postman_collection.json)
+- The CSV file used with Postman [link](https://github.com/captainanderz/DanskeBankMunicipality/blob/master/DanskeBankMunicipality/Municipalities.csv)
 
 
 ### Task
