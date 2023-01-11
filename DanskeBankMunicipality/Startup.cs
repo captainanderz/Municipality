@@ -1,3 +1,4 @@
+using System;
 using AutoMapper;
 using DanskeBankMunicipality.Business;
 using DanskeBankMunicipality.Contexts;
@@ -27,7 +28,7 @@ namespace DanskeBankMunicipality
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
             services.AddTransient<IMunicipalityService, MunicipalityService>();
             services.AddControllers();
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

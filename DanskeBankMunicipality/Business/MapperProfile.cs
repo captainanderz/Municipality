@@ -1,13 +1,14 @@
-﻿using DanskeBankMunicipality.Business.Models;
+﻿using AutoMapper;
+using DanskeBankMunicipality.Business.Models;
 
 namespace DanskeBankMunicipality.Business
 {
-    public class MapperProfile : AutoMapper.Profile
+    public class MapperProfile : Profile
     {
         public MapperProfile()
         {
-            CreateMap<Municipality, MunicipalityDto>();
-            CreateMap<MunicipalityDto, Municipality>();
+            CreateMap<Municipality, MunicipalityDto>().ReverseMap();
+            //CreateMap<MunicipalityDto, Municipality>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
         }
     }
 }
