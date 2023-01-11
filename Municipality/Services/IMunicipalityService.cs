@@ -1,11 +1,13 @@
-﻿namespace MunicipalityProject.Services
+﻿using MunicipalityProject.Business.Models;
+
+namespace MunicipalityProject.Services
 {
     public interface IMunicipalityService
     {
-        List<Business.Models.Municipality> GetAll();
-        Business.Models.Municipality GetSpecificMunicipality(string name, DateTime date);
-        Business.Models.Municipality AddMunicipality(Business.Models.Municipality municipality);
-        Business.Models.Municipality DeleteMunicipality(Business.Models.Municipality municipality);
-        List<Business.Models.Municipality> AddMunicipality(IEnumerable<Business.Models.Municipality> municipality);
+        List<Municipality> GetAll();
+        Municipality GetSpecificMunicipality(string name, DateTime date);
+        Municipality AddMunicipality(Municipality municipality);
+        Municipality DeleteMunicipality(Municipality municipality);
+        List<Municipality> AddMunicipality(IEnumerable<Municipality> municipality);
     }
 }

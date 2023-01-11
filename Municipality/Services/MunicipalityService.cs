@@ -1,5 +1,6 @@
 ﻿using MunicipalityProject.Business.Enums;
 using MunicipalityProject.Business.Extensions;
+using MunicipalityProject.Business.Models;
 using MunicipalityProject.Contexts;
 
 namespace MunicipalityProject.Services
@@ -13,12 +14,12 @@ namespace MunicipalityProject.Services
             _context = context;
         }
 
-        public List<Business.Models.Municipality> GetAll()
+        public List<Municipality> GetAll()
         {
             return _context.Municipalities.ToList();
         }
 
-        public Business.Models.Municipality GetSpecificMunicipality(string name, DateTime date)
+        public Municipality GetSpecificMunicipality(string name, DateTime date)
         {
             var municipalities = _context.Municipalities.Where(x => x.Name == name).ToList();
 
@@ -43,7 +44,7 @@ namespace MunicipalityProject.Services
             return municipalities.FirstOrDefault(x => x.Schedule == MunicipalitySchedules.Yearly && x.Date.Equals(date.FirstDayOfYear()));
         }
 
-        public Business.Models.Municipality AddMunicipality(Business.Models.Municipality municipality)
+        public Municipality AddMunicipality(Municipality municipality)
         {
             var match = _context.Municipalities.FirstOrDefault(x => x.Name == municipality.Name && x.Schedule == municipality.Schedule && x.Date == municipality.Date);
             if (match != null)
@@ -59,7 +60,7 @@ namespace MunicipalityProject.Services
             return municipality;
         }
 
-        public Business.Models.Municipality DeleteMunicipality(Business.Models.Municipality municipality)
+        public Municipality DeleteMunicipality(Municipality municipality)
         {
             var match = _context.Municipalities.FirstOrDefault(x => x.Name == municipality.Name && x.Schedule == municipality.Schedule && x.Date == municipality.Date && x.TaxRate == municipality.TaxRate);
             if (match == null)
@@ -71,7 +72,7 @@ namespace MunicipalityProject.Services
             return municipality;
         }
 
-        public List<Business.Models.Municipality> AddMunicipality(IEnumerable<Business.Models.Municipality> municipalities)
+        public List<Municipality> AddMunicipality(IEnumerable<Municipality> municipalities)
         {
             foreach (var municipality in municipalities)
             {

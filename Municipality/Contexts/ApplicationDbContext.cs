@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MunicipalityProject.Business.Models;
 
 namespace MunicipalityProject.Contexts
 {
@@ -6,6 +7,6 @@ namespace MunicipalityProject.Contexts
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public virtual DbSet<Business.Models.Municipality> Municipalities { get; set; }
+        public virtual DbSet<Municipality> Municipalities { get; set; }
     }
 }
