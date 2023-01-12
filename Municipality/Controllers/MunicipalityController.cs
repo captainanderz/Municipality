@@ -24,9 +24,9 @@ namespace MunicipalityProject.Controllers
 
         // For testing only
         [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_municipalityService.GetAll());
+            return Ok(await _municipalityService.GetAll());
         }
 
         [HttpGet]

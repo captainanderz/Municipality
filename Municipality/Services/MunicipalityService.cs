@@ -1,4 +1,5 @@
-﻿using MunicipalityProject.Business.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using MunicipalityProject.Business.Enums;
 using MunicipalityProject.Business.Extensions;
 using MunicipalityProject.Business.Models;
 using MunicipalityProject.Contexts;
@@ -14,9 +15,9 @@ namespace MunicipalityProject.Services
             _context = context;
         }
 
-        public List<Municipality> GetAll()
+        public async Task<List<Municipality>> GetAll()
         {
-            return _context.Municipalities.ToList();
+            return await _context.Municipalities.ToListAsync();
         }
 
         public Municipality GetSpecificMunicipality(string name, DateTime date)
